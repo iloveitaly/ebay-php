@@ -525,6 +525,25 @@ class ItemType extends EbatNs_ComplexType
 	 * @var VariationsType
 	 */
 	protected $Variations;
+	
+	protected $ConditionDisplayName;
+	protected $ConditionID;
+	
+	function setConditionDisplayName($value) {
+		$this->ConditionDisplayName = $value;
+	}
+	
+	function getConditionDisplayName() {
+		return $this->ConditionDisplayName;
+	}
+	
+	function setConditionID($value) {
+		$this->ConditionID = $value;
+	}
+	
+	function getConditionID() {
+		return $this->ConditionID;
+	}
 
 	/**
 	 * @return string
@@ -2432,6 +2451,22 @@ class ItemType extends EbatNs_ComplexType
 						'required' => false,
 						'type' => 'BiddingDetailsType',
 						'nsURI' => 'urn:ebay:apis:eBLBaseComponents',
+						'array' => false,
+						'cardinality' => '0..1'
+					),
+					'ConditionID' =>
+					array(
+						'required' => false,
+						'type' => 'ItemConditionCodeType',
+						'nsURI' => 'urn:ebay:apis:eBLBaseComponents',
+						'array' => false,
+						'cardinality' => '0..1'
+					),
+					'ConditionDisplayName' =>
+					array(
+						'required' => false,
+						'type' => 'string',
+						'nsURI' => 'http://www.w3.org/2001/XMLSchema',
 						'array' => false,
 						'cardinality' => '0..1'
 					),
